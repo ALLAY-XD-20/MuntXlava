@@ -9,7 +9,7 @@ Same layout as PandoraXlava (Gradle + `dev.arbjerg.lavalink.gradle-plugin`, Java
 ```yaml
 lavalink:
   plugins:
-    - dependency: "com.github.<your-github-user>:MuntXlava:<TAG>"
+    - dependency: "com.github.ALLAY-XD-20:MuntXlava:1.0.0"
       repository: "https://jitpack.io"
 ```
 
