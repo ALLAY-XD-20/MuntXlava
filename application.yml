@@ -1,0 +1,41 @@
+# Sample only. Copy the `plugins:` block into your own Lavalink application.yml.
+plugins:
+  muntxlava:
+    engine: enable
+    searchLimit: 10
+    collectionLimit: 100
+    # Where audio comes from when a source can't stream directly (Spotify always, others on failure)
+    providers: ["ytsearch:%QUERY%", "ytmsearch:%QUERY%"]
+
+    spotify:                      # needs clientId + clientSecret, otherwise skipped
+      enabled: true
+      clientId: ""
+      clientSecret: ""
+      market: US
+      # sourceName: spotify
+    qobuz:                        # works without a token (metadata + mirror)
+      enabled: true
+      userToken: ""               # optional: enables real streams
+      formatId: "5"               # 5 = MP3 320, 6 = FLAC 16-bit, 7/27 = hi-res
+    yandex:                       # needs accessToken, otherwise skipped
+      enabled: true
+      accessToken: ""
+    vk:                           # needs userToken or userCookie, otherwise skipped
+      enabled: true
+      userToken: ""
+      userCookie: ""
+    twitch:                       # OFF by default: Lavalink already has a "twitch" source
+      enabled: false
+      # clientId: kimne78kx3ncx6brgo4mv6wki5h1ko
+    twitter:
+      enabled: true
+
+# Only if you enable muntxlava.twitch / spotify and have the same built-in or LavaSrc source on:
+# lavalink:
+#   server:
+#     sources:
+#       twitch: false
+
+logging:
+  level:
+    dev.pawan.muntxlava: INFO
